@@ -1,18 +1,16 @@
-import { JwtPayload } from 'jsonwebtoken'
-import { TokenType } from '~/constants/enums'
+import mongoose from 'mongoose'
 
-interface RegisterRequestBody {
+interface IUser extends mongoose.Document {
   username: string
   display_name: string
+  avatar: string
   password: string
-  confirm_password: string
+  email: string
+  bio: string
+  salt: string
+  role: string
+  setPassword(password: string): void
+  validPassword(password: string): boolean
 }
 
-interface TokenPayload extends JwtPayload {
-  user_id: string
-  token_type: TokenType
-  exp: number
-  iat: number
-}
-
-export { RegisterRequestBody, TokenPayload }
+export { IUser }

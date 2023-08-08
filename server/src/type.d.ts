@@ -1,10 +1,6 @@
-import { TokenPayload } from '~/models/requests/user.request'
-import User from '~/models/schemas/user.schema'
-
+import { IUser } from './models/requests/user.request'
 declare module 'express' {
   interface Request {
-    user?: User
-    tokenDecoded?: TokenPayload
-    decodedRefreshToken?: TokenPayload
+    user?: IUser
   }
 }
