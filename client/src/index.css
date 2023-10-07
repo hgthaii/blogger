@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'CrimsonPro';
+    src: url('./assets/fonts/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: CrimsonPro, Helvetica, serif;
+    font-size: 10px;
+}
+
+.ant-select-selector {
+    padding: 0 !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-select-dropdown .ant-select-item {
+    padding: 0 !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-btn {
+    background-color: #fff !important;
+    border: none !important;
+    outline: none !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-input-group .ant-input {
+    border: none !important;
+    outline: none !important;
+}
+
+svg {
+    transform: scale(0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+#day,
+#night {
+    width: 240px;
+    height: 110px;
+    background: white;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 100px;
+    background: #9cd6ef;
+    border: 6px solid #65c0e7;
+}
+
+#night {
+    pointer-events: none;
+}
+
+#background {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: #d3edf8;
+    z-index: -1;
+}
+
+@media (max-width: 720px) {
+    #day,
+    #night {
+        width: 320px;
+        height: 150px;
+    }
+    svg {
+        transform: scale(0.95);
+    }
+}
+
+.header {
+    @apply h-[50px] bg-[#274472] flex items-center gap-3 justify-end px-4;
+}
+
+.shadow {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    -moz-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 5px; /* Khoảng cách giữa nội dung và đường border */
+    margin-top: 1.2rem;
+    cursor: pointer;
+    width: 10rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.menu-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #274472;
+    transition: width 0.4s ease, left 0.4s ease; /* Thêm transition cho left */
+}
+
+.menu-item.active-tab::before {
+    width: 100%;
+    left: 0; /* Đặt left thành 0 khi tab được chọn */
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-tabs {
+    font-family: CrimsonPro, Helvetica, serif !important;
+    font-size: 2rem !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+    border-bottom: -2px solid #28678a !important;
+    z-index: 2;
+}
+
+.ant-tabs-ink-bar {
+    background: #28678a !important;
+}
+
+.ant-tabs-tab:hover {
+    color: #28678a !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-tabs .ant-tabs-tab {
+    font-size: 2rem !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #28678a !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-tabs-centered
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']),
+:where(.css-dev-only-do-not-override-17a39f8).ant-tabs-centered
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']) {
+    border: none !important;
+}
+
+.txtOver {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.home-page {
+    background-image: url('./assets/images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #a7c7e7;
+}
+
+.backround-container {
+    background-color: #fff;
+}

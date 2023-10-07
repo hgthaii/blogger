@@ -1,0 +1,5 @@
+export { default as HeaderComponent } from './Header'
+export { default as BodyComponent } from './Body'
+export { default as SiderComponent } from './Sider'
+export { default as FooterComponent } from './Footer'
+export { default as Menu } from './Menu'
